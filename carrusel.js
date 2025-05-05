@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const carouselContainer = document.querySelector(".carousel-container");
-    const carouselItems = document.querySelectorAll(".carousel-item");
-    const prevButton = document.querySelector(".prev-button");
-    const nextButton = document.querySelector(".next-button");
+    const carouselContainer = document.querySelector(".carrusel-contenedor");
+    const carouselItems = document.querySelectorAll(".carrusel-item");
+    const btnatras = document.querySelector(".btn-atras");
+    const btnsiguiente = document.querySelector(".btn-siguiente");
     let currentIndex = 0;
     let intervalId;
 
@@ -32,14 +32,14 @@ document.addEventListener("DOMContentLoaded", function () {
         clearInterval(intervalId);
     }
 
-    if (prevButton && nextButton) {
-        prevButton.addEventListener("click", () => {
+    if (btnatras && btnsiguiente) {
+        btnatras.addEventListener("click", () => {
             stopCarousel();
             prevSlide();
             startCarousel();
         });
 
-        nextButton.addEventListener("click", () => {
+        btnsiguiente.addEventListener("click", () => {
             stopCarousel();
             nextSlide();
             startCarousel();

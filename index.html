@@ -5,140 +5,212 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1" />
     <title>Premium Quality</title>
-    <link rel="shortcut icon" href="imgs/car-svgrepo-com.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="imgs/2.png" type="image/x-icon">
     <link href='style.css' rel='stylesheet'>
     <link rel="stylesheet" href="fonts/bricolagegrotesque.css">
-    <script src='main.js'></script>
+    <script defer src='carrusel.js'></script>
+    <script defer src="nav.js"></script>
+    <script defer src="section.js"></script>
 </head>
 
 <body>
     <nav class="navbar">
-        <div class="navbar-container">
-            <a href="#" class="logo">Premium Quality</a>
-            <ul class="nav-links">
-                <li><a href="#carousel">Inicio</a></li>
-                <li><a href="#planes">Planes de pago</a></li>
-                <li><a href="#exclusivos">Exclusivos</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+        <div class="nav_contenedor_logo">
+            <a href="#" class="logo">
+                <img src="imgs/2 2.png" alt="logo de auto" class="nav_img_logo">
+                <span class="nav_logo_nombre">Premium Quality</span>
+            </a>
         </div>
+
+
+
+        <div class="nav__burger" id="navBurger">
+
+            <svg width="48px" height="48px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H20" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+                <path d="M5 17H20" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+                <path d="M5 7H20" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+            </svg>
+        </div>
+
+        <ul id="nav-links" class="nav-links">
+            <li><a class="nav-item" href="#carousel">Inicio</a></li>
+            <li><a class="nav-item" href="#planes">Planes</a></li>
+            <li><a class="nav-item" href="#exclusivos">Exclusivos</a></li>
+            <li><a class="nav-item" href="#servicios">Servicios</a></li>
+            <li><a class="nav-item" href="#contacto">Contacto</a></li>
+        </ul>
+
     </nav>
     <section id="carousel" class="carousel-section">
-        <button class="prev-button"><</button>
-                <button class="next-button">></button>
-                <div class="carousel-container">
-                    <div class="carousel-item">
-                        <img src="imgs/pexels-charles-kettor-268979-831475.jpg" alt="Car 1" class="card-image">
-                        <div class="carousel-legend">
-                            <p class="carousel-legend-legend">Los mejores precios del mercado</p>
+        <button class="btn-atras">&#60;</button>
+        <button class="btn-siguiente">&#62;</button>
+        <div class="carrusel-contenedor">
+            <div class="carrusel-item">
+                <img src="imgs/pexels-charles-kettor-268979-831475.jpg" alt="auto 1" class="card-image">
+                <div class="carousel-legend">
+                    <p class="carousel-legend-legend">Los mejores precios del mercado</p>
 
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="imgs/pexels-mikebirdy-112460.jpg" alt="Car 2" class="card-image">
-                        <div class="carousel-legend">
-                            <p class="carousel-legend-legend">Prestigiosas marcas de todo el mundo</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="imgs/pexels-mikebirdy-116675.jpg" alt="Car 3" class="card-image">
-                        <div class="carousel-legend">
-                            <p class="carousel-legend-legend">Planes que se adaptan a vos y no a nosotros</p>
-
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="imgs/pexels-mikebirdy-244206.jpg" alt="Car 4" class="card-image">
-                        <div class="carousel-legend">
-                            <p class="carousel-legend-legend">Servicios con el personal mejor calificado</p>
-
-                        </div>
-                    </div>
                 </div>
-    </section>
+            </div>
+            <div class="carrusel-item">
+                <img src="imgs/pexels-mikebirdy-112460.jpg" alt="auto 2" class="card-image">
+                <div class="carousel-legend">
+                    <p class="carousel-legend-legend">Prestigiosas marcas de todo el mundo</p>
+                </div>
+            </div>
+            <div class="carrusel-item">
+                <img src="imgs/pexels-mikebirdy-116675.jpg" alt="auto 3" class="card-image">
+                <div class="carousel-legend">
+                    <p class="carousel-legend-legend">Planes que se adaptan a vos y no a nosotros</p>
 
-    <section id="planes">
-        <h2>Planes de pago</h2>
-        <div class="payment-plans-container">
+                </div>
+            </div>
+            <div class="carrusel-item">
+                <img src="imgs/pexels-mikebirdy-244206.jpg" alt="auto 4" class="card-image">
+                <div class="carousel-legend">
+                    <p class="carousel-legend-legend">Servicios con el personal mejor calificado</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section id="planes" class="section">
+        <h2 class="subtitulos">Planes de pago</h2>
+        <div class="planespago-contenedor">
             <div class="card-section">
                 <div class="card-grid">
-                    <div class="card">
-                        <div class="card-content">
-                            <h3 class="card-title">Plan A</h3>
-                            <p class="card-description">Descripción</p>
+                    <div class="borde-principal">
+                        <div class="card">
+                            <div class="card-content">
+                                <h3 class="card-title">Plan 70/30</h3>
+                                <p class="card-description">Se financia el 70% del valor del vehículo en cuotas sin
+                                    interés, y el 30% restante se abona al contado o se puede
+                                    entregar un vehículo usado.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-content">
-                            <h3 class="card-title">Plan B</h3>
-                            <p class="card-description">Descripción.</p>
+                    <div class="borde-secundario">
+                        <div class="card">
+                            <div class="card-content">
+                                <h3 class="card-title">Plan 100%</h3>
+                                <p class="card-description">Se financia el 100% del valor del vehículo en cuotas, sin
+                                    necesidad de un anticipo inicial.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-content">
-                            <h3 class="card-title">Plan C</h3>
-                            <p class="card-description">Descripción</p>
+                    <div class="borde-secundario">
+                        <div class="card">
+                            <div class="card-content">
+                                <h3 class="card-title">Planes con cuotas fijas</h3>
+                                <p class="card-description">Las cuotas tienen un valor constante durante todo el periodo
+                                    del
+                                    plan.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="borde-secundario">
+                        <div class="card">
+                            <div class="card-content">
+                                <h3 class="card-title">Planes con cuotas variables</h3>
+                                <p class="card-description">Las cuotas pueden variar en valor a lo largo del tiempo,
+                                    según
+                                    el plan.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="exclusivos">
-        <h2>Exclusivos</h2>
+    <hr>
+    <section id="exclusivos" class="section">
+        <h2 class="subtitulos">Exclusivos</h2>
         <div class="card-section">
             <div class="card-grid">
-                <div class="card">
-                    <img src="imgs/pexels-albinberlin-919073.jpg" alt="Auto Modelo 1" class="card-image">
-                    <div class="card-content">
-                        <h3 class="card-title">Mercedez Benz AMG</h3>
-                        <p class="card-description price">Precio: $100,000</p>
+                <div class="borde-principal">
+                    <div class="card">
+                        <img src="imgs/pexels-albinberlin-919073.jpg" alt="Auto Modelo 1" class="card-image">
+                        <div class="card-content">
+                            <h3 class="card-title">Mercedez Benz AMG</h3>
+                            <p class="card-description price">Precio: $100,000</p>
+                        </div>
                     </div>
                 </div>
-                <div class="card">
-                    <img src="imgs/pexels-alex-amorales-321095-909907.jpg" alt="Auto Modelo 2" class="card-image">
-                    <div class="card-content">
-                        <h3 class="card-title">Audi A7</h3>
-                        <p class="card-description price">Precio: $150,000</p>
+                <div class="borde-secundario">
+                    <div class="card">
+                        <img src="imgs/pexels-pashal-337909.jpg" alt="Auto Modelo 4" class="card-image">
+                        <div class="card-content">
+                            <h3 class="card-title">Ferrari 337</h3>
+                            <p class="card-description price">Precio: $500,000</p>
+                        </div>
                     </div>
                 </div>
-                <div class="card">
-                    <img src="imgs/pexels-avinashpatel-544542.jpg" alt="Auto Modelo 3" class="card-image">
-                    <div class="card-content">
-                        <h3 class="card-title">Ford Mustang</h3>
-                        <p class="card-description price">Precio: $200,000</p>
+                <div class="borde-secundario">
+                    <div class="card">
+                        <img src="imgs/pexels-alex-amorales-321095-909907.jpg" alt="Auto Modelo 2" class="card-image">
+                        <div class="card-content">
+                            <h3 class="card-title">Audi A7</h3>
+                            <p class="card-description price">Precio: $150,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="borde-secundario">
+                    <div class="card">
+                        <img src="imgs/pexels-avinashpatel-544542.jpg" alt="Auto Modelo 3" class="card-image">
+                        <div class="card-content">
+                            <h3 class="card-title">Ford Mustang</h3>
+                            <p class="card-description price">Precio: $200,000</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="servicios">
-        <h2>Servicios</h2>
+    <hr>
+    <section id="servicios" class="section">
+        <h2 class="subtitulos">Servicios</h2>
         <div class="card-section">
             <div class="card-grid">
                 <div class="card">
-                    <img src="imgs/servicios/pexels-daniel-andraski-197681005-13065693.jpg" alt="Auto Modelo 1" class="card-image">
+                    <img src="imgs/servicios/pexels-daniel-andraski-197681005-13065693.jpg" alt="Auto Modelo 1"
+                        class="card-image">
                     <div class="card-content">
                         <h3 class="card-title">Matenimiento</h3>
+                        <p class="card-slogan">"Mantenimiento profesional, resultados impecables."</p>
                     </div>
                 </div>
                 <div class="card">
                     <img src="imgs/servicios/pexels-cottonbro-4489721.jpg" alt="Auto Modelo 1" class="card-image">
                     <div class="card-content">
                         <h3 class="card-title">Detalles</h3>
+                        <p class="card-slogan">"Transformamos tus ideas en detalles únicos."</p>
+
                     </div>
                 </div>
                 <div class="card">
                     <img src="imgs/servicios/pexels-dcdp-3689314.jpg" alt="Auto Modelo 1" class="card-image">
                     <div class="card-content">
                         <h3 class="card-title">Personalizacion</h3>
+                        <p class="card-slogan">"Más que un producto, una experiencia única."</p>
+
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="imgs/servicios/pexels-mikebirdy-13101559.jpg" alt="Auto Modelo 1" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Seguros</h3>
+                        <p class="card-slogan">"Conducí con la tranquilidad de estar protegido."</p>
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <footer id="contacto" class="footer">
+        <h2 class="subtitulos">Contacto</h2>
+
         <div class="footer-container">
             <div class="contact-info">
                 <p>Email: info@premiumquality.com</p>
@@ -146,15 +218,37 @@
             </div>
             <form>
                 <div class="form-group">
-                    <input type="email" placeholder="Tu Email" required>
+                    <label for="form-nombre">Nombre:</label>
+                    <input id="form-nombre" type="text" placeholder="Tu nombre" required>
                 </div>
                 <div class="form-group">
-                    <textarea placeholder="Tu Inquiry" required></textarea>
+                    <label for="form-apellido">Apellido:</label>
+
+                    <input id="form-apellido" type="text" placeholder="Tu apellido" required>
+                </div>
+                <div class="form-group">
+                    <label for="form-tel">Telefono:</label>
+
+                    <input id="form-tel" type="number" placeholder="Tu Telefono" required>
+                </div>
+                <div class="form-group">
+                    <label for="form-Email">Email:</label>
+
+                    <input id="form-Email" type="email" placeholder="Tu Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="form-consulta">Consulta:</label>
+
+                    <textarea id="form-consulta" placeholder="Tu Consulta" required></textarea>
                 </div>
                 <button type="submit" class="btn">Enviar</button>
             </form>
         </div>
+
     </footer>
+    <section class="copyright">
+        <p class="copyright__content">&copy; 2025 NicoS92, Inc.</p>
+    </section>
 </body>
 
 </html>
