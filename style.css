@@ -1,3 +1,13 @@
+:root {
+    --color-primary: #0077cc;
+    --surface: #181818;
+    --color-background: #333;
+    --color-card-background: #444;
+    --color-text: #f4f4f4;
+    --color-white: #fff;
+    --color-black: #000;
+}	
+
 * {
     margin: 0;
     padding: 0;
@@ -13,14 +23,14 @@ body {
         BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
         "Open Sans", "Helvetica Neue";
     line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+    color: var(--color-text);
+    background-color: var(--color-background);
 }
 
 /* Navigation Bar */
 .navbar {
-    background-color: #eceff1;
-    color: #333;
+    background-color: var(--surface);
+    color: var(--color-text);
     padding: 1em;
     position: fixed;
     top: 0;
@@ -84,20 +94,20 @@ body {
     border-radius: 1em;
 }
 .nav-links li:hover {
-    background-color: #fff;
+    background-color: var(--color-primary);
     transition: color 0.3s ease;
 }
 
 .nav-item {
     display: block;
     text-decoration: none;
-    color: #333;
+    color: var(--color-text);
     transition: color 0.3s ease;
 }
 
-.nav-item:hover {
-    color: #0077cc;
-}
+/* .nav-item:hover {
+    color: #6bb3e6;
+} */
 .hamburger {
     display: none;
     cursor: pointer;
@@ -202,7 +212,7 @@ body {
 }
 
 .card {
-    background-color: #fff;
+    background-color: var(--color-card-background);
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -230,7 +240,7 @@ body {
 
 .price {
     font-weight: bold;
-    color: #0077cc;
+    color: var(--color-primary);
 }
 #carousel,
 #planes,
@@ -241,8 +251,8 @@ body {
 }
 
 .footer {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--color-card-background);
+    color: var(--color-text);
     padding: 2rem 0.5rem;
     text-align: center;
 }
@@ -286,7 +296,7 @@ body {
     resize: none;
 }
 .btn {
-    background-color: #0077cc;
+    background-color: var(--color-primary);
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -349,7 +359,7 @@ body {
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: #eceff1;
+        background-color: var(--surface);
         z-index: 1000;
         padding: 1rem;
         border-radius: 0 0 1rem 1rem;
@@ -382,9 +392,9 @@ body {
     }
 }
 .copyright {
-    background-color: #181818;
+    background-color: var(--surface);
 
-    color: #f4f4f4;
+    color: var(--color-text);
     width: 100%;
     padding: 0.5rem 0rem;
     text-align: center;
