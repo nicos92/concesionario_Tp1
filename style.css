@@ -1,12 +1,37 @@
 :root {
-    --color-primary: #0077cc;
+    font-size: 100%;
+    --color-primary: #318dcf;
+    --color-secondary: #32bfcf;
     --surface: #181818;
     --color-background: #333;
     --color-card-background: #444;
     --color-text: #f4f4f4;
     --color-white: #fff;
     --color-black: #000;
-}	
+
+    --fs-sm: clamp(0.8rem, 0.17vi + 0.76rem, 0.89rem);
+    --fs-base: clamp(1rem, 0.34vi + 0.91rem, 1.19rem);
+    --fs-md: clamp(1.25rem, 0.61vi + 1.1rem, 1.58rem);
+    --fs-lg: clamp(1.56rem, 1vi + 1.31rem, 2.11rem);
+    --fs-xl: clamp(1.95rem, 1.56vi + 1.56rem, 2.81rem);
+    --fs-xxl: clamp(2.44rem, 2.38vi + 1.85rem, 3.75rem);
+    --fs-xxxl: clamp(3.05rem, 3.54vi + 2.17rem, 5rem);
+    --fs-xxxxl: clamp(3.81rem, 5.18vi + 2.52rem, 6.66rem);
+}
+
+.fs-lg{
+    font-size: var(--fs-lg);
+}
+
+.fs-xl{
+    font-size: var(--fs-xl);
+
+}
+
+.fs-xxxxl{
+    font-size: var(--fs-xxxxl);
+}
+
 
 * {
     margin: 0;
@@ -25,6 +50,7 @@ body {
     line-height: 1.6;
     color: var(--color-text);
     background-color: var(--color-background);
+    font-size: var(--fs-base);
 }
 
 /* Navigation Bar */
@@ -60,6 +86,7 @@ body {
 
 .nav_logo_nombre {
     width: 75%;
+    color: var(--color-text);
 }
 
 .navbar-container {
@@ -75,7 +102,7 @@ body {
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: var(--fs-base);
     text-decoration: none;
 }
 
@@ -101,13 +128,11 @@ body {
 .nav-item {
     display: block;
     text-decoration: none;
+    font-size: var(--fs-sm);
     color: var(--color-text);
     transition: color 0.3s ease;
 }
 
-/* .nav-item:hover {
-    color: #6bb3e6;
-} */
 .hamburger {
     display: none;
     cursor: pointer;
@@ -144,10 +169,15 @@ body {
     padding: 1em 2em;
     transform: translateY(50px);
     transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .subtitulos {
     text-decoration: underline;
+    font-size: var(--fs-xl);
 }
 
 .section.visible {
@@ -180,7 +210,9 @@ body {
 .carrusel-item img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
+
 
 /* Card Styles */
 
@@ -196,11 +228,29 @@ body {
     gap: 20px;
 }
 
+.card-grid-big {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    gap: 20px;
+}
+
 @media (max-width: 1199.98px) {
     .card-grid {
         grid-template-columns: repeat(2, minmax(220px, 1fr));
     }
 }
+
+@media (max-width: 991.98px) { 
+    
+    .card-grid-big {
+        grid-template-columns: repeat(1, minmax(300px, 1fr));
+    }
+ }
+
+/* @media (max-width: 767.98px) { 
+
+ } */
+
 
 @media (max-width: 575.98px) {
     .card-grid {
@@ -219,8 +269,17 @@ body {
     height: 100%;
 }
 
+.card-big {
+    background-color: transparent;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    height: 100%;
+}
+
 .card-content {
     padding: 1rem;
+  
 }
 
 .card-image {
@@ -228,20 +287,31 @@ body {
     height: 200px;
     object-fit: cover;
 }
+.card-image-big {
+    width: 100%;
+    height: 50dvh;
+    object-fit: cover;
+}
 
 .card-title {
     font-weight: bold;
+    font-size: var(--fs-md);
     margin-bottom: 0.5rem;
+}
+.super{
+    font-size: var(--fs-xxl);
+    text-shadow: 0 0 16px var(--surface);
 }
 
 .card-description {
-    font-size: 0.9rem;
+    font-size: var(--fs-base);
 }
 
 .price {
     font-weight: bold;
-    color: var(--color-primary);
+    color: var(--color-secondary);
 }
+
 #carousel,
 #planes,
 #exclusivos,
@@ -282,7 +352,7 @@ body {
 .form-group textarea {
     width: 100%;
     padding: 0.5rem;
-    border: 1px solid #fff;
+    border: 1px solid var(--color-text);
     border-radius: 4px;
 }
 
@@ -292,15 +362,26 @@ body {
     font-weight: 200;
     letter-spacing: 0.05em;
     min-height: 64px;
-    color: #333;
+    color: var(--color-background);
     resize: none;
 }
 .btn {
     background-color: var(--color-primary);
-    color: white;
+    color: var(--color-text);
     border: none;
     padding: 0.5rem 1rem;
-    border-radius: 4px;
+    border-radius: 1rem;
+    width: var(--fs-xxxxl) + 10rem;
+    height: var(--fs-xxxl);
+    font-size: var(--fs-md);
+}
+
+.btn:hover {
+    box-shadow: 0 0 16px var(--color-primary);
+}
+
+.btn:active {
+    background-color: var(--color-secondary);
 }
 
 .btn-atras,
@@ -309,7 +390,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    color: var(--color-text);
     border: none;
     border-radius: 1rem;
     padding: 10px 15px;
@@ -329,13 +410,13 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #3337;
-    color: #fff;
+    color: var(--color-text);
     padding: 10px;
     display: flex;
     border-radius: 1rem;
     align-items: center;
     justify-content: center;
-    font-size: 2em;
+    font-size: var(--fs-lg);
     font-weight: 800;
     text-align: center;
     width: fit-content;
@@ -393,39 +474,55 @@ body {
 }
 .copyright {
     background-color: var(--surface);
-
+    font-size: var(--fs-sm);
     color: var(--color-text);
     width: 100%;
     padding: 0.5rem 0rem;
     text-align: center;
 }
 
+@property --angulo {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
 .borde-principal {
     background: linear-gradient(
-        60deg,
+        var(--angulo),
         #f79533,
         #f37055,
-        #ef4e7b,
-        #a166ab,
+        #ef4e7b
+        /* #a166ab,
         #5073b8,
         #1098ad,
         #07b39b,
-        #6fba82
+        #6fba82 */
     );
     padding: 4px;
     border-radius: 8px;
-
+    animation: example 4s linear infinite;
 }
 
-.borde-secundario{
+@keyframes example {
+    from {
+        --angulo: 0deg;
+    }
+    to {
+        --angulo: 360deg;
+    }
+}
+
+.borde-secundario {
     background: linear-gradient(
         60deg,
         transparent,
-        #181818,
+        var(--color-primary),
         transparent
     );
     padding: 1px;
     border-radius: 8px;
+
 }
 /* // X-Small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) { ... }
