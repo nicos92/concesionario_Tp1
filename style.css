@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
 :root {
     font-size: 100%;
     --color-primary: #318dcf;
@@ -8,6 +9,7 @@
     --color-text: #f4f4f4;
     --color-white: #fff;
     --color-black: #000;
+    --color-contraste: #d40000;
 
     --fs-sm: clamp(0.8rem, 0.17vi + 0.76rem, 0.89rem);
     --fs-base: clamp(1rem, 0.34vi + 0.91rem, 1.19rem);
@@ -222,6 +224,10 @@ body {
     margin: 0 auto;
 }
 
+.p0{
+    padding: 0;
+}
+
 .card-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(220px, 1fr));
@@ -231,7 +237,7 @@ body {
 .card-grid-big {
     display: grid;
     grid-template-columns: repeat(2, minmax(300px, 1fr));
-    gap: 20px;
+    
 }
 
 @media (max-width: 1199.98px) {
@@ -263,7 +269,7 @@ body {
 
 .card {
     background-color: var(--color-card-background);
-    border-radius: 8px;
+    /* border-radius: 8px; */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     height: 100%;
@@ -271,7 +277,7 @@ body {
 
 .card-big {
     background-color: transparent;
-    border-radius: 8px;
+    /* border-radius: 8px; */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     height: 100%;
@@ -300,6 +306,7 @@ body {
 }
 .super{
     font-size: var(--fs-xxl);
+    
     text-shadow: 0 0 16px var(--surface);
 }
 
@@ -366,18 +373,27 @@ body {
     resize: none;
 }
 .btn {
-    background-color: var(--color-primary);
+    background: #D4D4D4;
+background: radial-gradient(circle, rgba(212, 0, 0, .3) 0%, rgba(212, 0, 0, .9) 100%);
     color: var(--color-text);
-    border: 1px solid #000;
     padding: 0.5rem 1rem;
     border-radius: 1rem;
     width: auto;
     height: auto;
     font-size: var(--fs-md);
+    cursor: pointer;
+}
+
+.btn-carrusel{
+    background-color: transparent;
+    border: 2px solid var(--color-contraste);
+    box-shadow: inset 0 0 16px var(--color-contraste);
+
 }
 
 .btn:hover {
-    box-shadow: 0 0 16px var(--color-primary);
+    box-shadow: 0 0 16px var(--color-contraste);
+    background-color:  var(--color-contraste);
 }
 
 .btn:active {
@@ -405,6 +421,8 @@ body {
 }
 
 .carousel-legend {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -544,3 +562,7 @@ body {
 @media (max-width: 1399.98px) { ... }
 
 */
+
+.sin-borde{
+    border-radius: 0;
+}
