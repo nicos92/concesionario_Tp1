@@ -381,6 +381,7 @@ background: radial-gradient(circle, rgba(212, 0, 0, .3) 0%, rgba(212, 0, 0, .9) 
     width: auto;
     height: auto;
     font-size: var(--fs-md);
+    text-decoration: none;
     cursor: pointer;
 }
 
