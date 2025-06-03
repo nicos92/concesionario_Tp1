@@ -256,9 +256,6 @@ body {
     }
  }
 
-/* @media (max-width: 767.98px) { 
-
- } */
 
 
 @media (max-width: 575.98px) {
@@ -272,7 +269,7 @@ body {
 
 .card {
     background-color: var(--color-card-background);
-    /* border-radius: 8px; */
+
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     height: 100%;
@@ -282,7 +279,7 @@ body {
 
 .card-big {
     background-color: transparent;
-    /* border-radius: 8px; */
+
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     height: 100%;
@@ -447,7 +444,6 @@ body {
     color: var(--color-text);
     
     padding: 10px;
-    display: flex;
     border-radius: .5rem;
     align-items: center;
     justify-content: center;
