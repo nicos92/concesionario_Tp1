@@ -285,32 +285,34 @@
                 <p>Email: info@premiumquality.com</p>
                 <p>Telefono: 0-800-333-0189</p>
             </div>
-            <form>
+            <form action="https://formsubmit.co/cfa60ce1fdf1a337dda982534e21026e" method="POST" >
                 <div class="form-group">
                     <label for="form-nombre">Nombre:</label>
-                    <input id="form-nombre" type="text" placeholder="Tu nombre" required />
+                    <input id="form-nombre" type="text" name="Nombre" placeholder="Tu nombre" required />
                 </div>
                 <div class="form-group">
                     <label for="form-apellido">Apellido:</label>
 
-                    <input id="form-apellido" type="text" placeholder="Tu apellido" required />
+                    <input id="form-apellido" type="text" name="Apellido" placeholder="Tu apellido" required />
                 </div>
                 <div class="form-group">
                     <label for="form-tel">Telefono:</label>
 
-                    <input id="form-tel" type="number" placeholder="Tu Telefono" required />
+                    <input id="form-tel" type="number" name="Telefono" placeholder="Tu Telefono" required />
                 </div>
                 <div class="form-group">
                     <label for="form-Email">Email:</label>
 
-                    <input id="form-Email" type="email" placeholder="Tu Email" required />
+                    <input id="form-Email" type="email" name="Email" placeholder="Tu Email" required />
                 </div>
                 <div class="form-group">
                     <label for="form-consulta">Consulta:</label>
 
-                    <textarea id="form-consulta" placeholder="Tu Consulta" required></textarea>
+                    <textarea id="form-consulta" name="Consulta" placeholder="Tu Consulta" required></textarea>
                 </div>
                 <button type="submit" class="btn">ENVIAR</button>
+                <input type="hidden" name="_next" value="https://nicos92.github.io/concesionario_Tp1/">
+                <input type="hidden" name="_captcha" value="false">
             </form>
         </div>
     </footer>
