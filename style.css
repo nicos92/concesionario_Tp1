@@ -577,3 +577,76 @@ body {
 .sin-borde{
     border-radius: 0;
 }
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Black with opacity */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.show {
+    display: flex; /* Show the modal when the 'show' class is added */
+}
+
+.modal-content {
+    background-color: var(--surface);
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+}
+
+/* Modal Styles */
+.modal {
+ display: none; /* Hidden by default */
+ position: fixed; /* Stay in place */
+ z-index: 1001; /* Sit on top */
+ left: 0;
+ top: 0;
+ width: 100%; /* Full width */
+ height: 100%; /* Full height */
+ overflow: auto; /* Enable scroll if needed */
+ background-color: rgba(0, 0, 0, 0.7); /* Black with opacity */
+ align-items: center;
+ justify-content: center;
+}
+
+.modal.show {
+ display: flex; /* Show the modal when the 'show' class is added */
+}
+
+.modal-content {
+ background-color: var(--surface);
+ margin: auto;
+ padding: 20px;
+ border: 1px solid #888;
+ width: 80%; /* Could be more or less, depending on screen size */
+ max-width: 500px;
+ border-radius: 8px;
+ text-align: center;
+ position: relative;
+}
