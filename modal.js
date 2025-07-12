@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         successModal.classList.remove('show');
 
         contactForm.addEventListener('submit', (event) => {
-            event.preventDefault(); // Prevent the default form submission
+            //event.preventDefault(); // Prevent the default form submission
 
             // In a real application, you would perform the form submission
             // here (e.g., using fetch or XMLHttpRequest) and only show the modal
