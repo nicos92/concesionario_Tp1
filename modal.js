@@ -38,5 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
             successModal.classList.add('show');
             localStorage.removeItem('showSuccessModal'); // Remove the flag so it doesn't show again on subsequent loads
         }
+        const okModalButton = successModal.querySelector('#okModalButton');
+
+if (okModalButton) {
+    okModalButton.addEventListener('click', () => {
+        successModal.classList.remove('show');
+    });
+}
     }
 });
