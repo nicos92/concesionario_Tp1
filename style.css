@@ -643,7 +643,9 @@ body {
 }
 
 .borde-secundario {
-    background: linear-gradient(60deg, transparent, var(--color-primary), transparent);
+    background: linear-gradient(60deg, transparent,
+        var(--color-primary),
+            transparent);
     padding: 1px;
     border-radius: .5rem;
 }
@@ -701,7 +703,7 @@ body {
         width: 100%;
         /* Ancho completo en pantallas medianas */
         height: 250px;
-        object-fit: contain;
+        object-fit: cover;
     }
 
     .promocion-content {
