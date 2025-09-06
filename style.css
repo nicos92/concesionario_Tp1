@@ -355,22 +355,28 @@ body {
     border-radius: .5rem;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    flex-direction: row; /* Por defecto horizontal para pantallas grandes */
-    min-height: 300px; /* Altura mínima para el contenedor en pantallas grandes */
+    flex-direction: row;
+    /* Por defecto horizontal para pantallas grandes */
+    min-height: 300px;
+    /* Altura mínima para el contenedor en pantallas grandes */
 }
 
 .promocion-item.reverse {
-    flex-direction: row-reverse; /* Por defecto horizontal inverso para pantallas grandes */
+    flex-direction: row-reverse;
+    /* Por defecto horizontal inverso para pantallas grandes */
 }
 
 .promocion-image {
-    width: 50%; /* 50% de ancho para pantallas grandes */
-    height: 100%; /* Ocupar todo el alto del contenedor */
+    width: 50%;
+    /* 50% de ancho para pantallas grandes */
+    height: 100%;
+    /* Ocupar todo el alto del contenedor */
     object-fit: cover;
 }
 
 .promocion-content {
-    width: 50%; /* 50% de ancho para pantallas grandes */
+    width: 50%;
+    /* 50% de ancho para pantallas grandes */
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -387,14 +393,74 @@ body {
     margin-bottom: 1rem;
 }
 
-    .promocion-content .btn-consultar {
-        position: static;
-        transform: none;
-        width: auto;
-        margin-top: 1rem;
-        align-self: center; /* Centrar el botón */
-    }
+.promocion-content .btn-consultar {
+    position: static;
+    transform: none;
+    width: auto;
+    margin-top: 1rem;
+    align-self: center;
+    /* Centrar el botón */
+}
 
+/*==================================================
+    OPINIONES SECTION
+==================================================*/
+.opiniones-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.opinion-item {
+    display: flex;
+    background-color: var(--color-card-background);
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    /* Por defecto horizontal para pantallas grandes */
+}
+
+.opinion-image {
+    width: 250px;
+    /* 50% de ancho para pantallas grandes */
+    height: 250px;
+    /* Ocupar todo el alto del contenedor */
+    object-fit: cover;
+        border-radius: 50%;
+}
+
+.opinion-content {
+    width: 100%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.opinion-title {
+    font-weight: bold;
+    font-size: var(--fs-xl);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.opinion-description {
+    margin-bottom: 1rem;
+}
+
+.star-counter {
+    margin-top: 0.5rem;
+    /* Espacio arriba del contador */
+    display: flex;
+    gap: 5px;
+    /* Espacio entre estrellas */
+}
 /*==================================================
     FOOTER & CONTACT FORM
 ==================================================*/
@@ -467,7 +533,8 @@ body {
     font-size: var(--fs-md);
     text-decoration: none;
     cursor: pointer;
-    border: none; /* Added for consistency */
+    border: none;
+    /* Added for consistency */
 }
 
 .btn:hover {
@@ -562,6 +629,7 @@ body {
     from {
         --angulo: 0deg;
     }
+
     to {
         --angulo: 360deg;
     }
@@ -591,7 +659,7 @@ body {
     width: 80%;
     background: transparent;
     border: 2px solid var(--color-primary);
-padding: 0;
+    padding: 0;
     text-align: center;
 }
 
@@ -610,6 +678,11 @@ padding: 0;
     .card-grid {
         grid-template-columns: repeat(2, minmax(220px, 1fr));
     }
+
+    .opiniones-grid {
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+        grid-template-rows: repeat(2, 1fr);
+    }
 }
 
 /* Medium devices (tablets, less than 992px) */
@@ -620,30 +693,36 @@ padding: 0;
 
     .promocion-item,
     .promocion-item.reverse {
-        flex-direction: column; /* Vertical en pantallas medianas */
+        flex-direction: column;
+        /* Vertical en pantallas medianas */
     }
 
     .promocion-image {
-        width: 100%; /* Ancho completo en pantallas medianas */
+        width: 100%;
+        /* Ancho completo en pantallas medianas */
         height: 250px;
         object-fit: contain;
     }
 
     .promocion-content {
-        width: 100%; /* Ancho completo en pantallas medianas */
+        width: 100%;
+        /* Ancho completo en pantallas medianas */
         padding: 1rem;
     }
 
     .promocion-content .btn-consultar {
         align-self: center;
     }
+
+
 }
 
 /* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
     .nav__burger {
         display: block;
-        z-index: 1001; /* Ensure burger is above the overlay */
+        z-index: 1001;
+        /* Ensure burger is above the overlay */
     }
 
     .nav-links {
@@ -652,33 +731,38 @@ padding: 0;
         justify-content: center;
         align-items: center;
         gap: 2rem;
-        
+
         position: fixed;
         top: 0;
-        left: -100%; /* Start off-screen */
+        left: -100%;
+        /* Start off-screen */
         width: 100%;
         height: 100vh;
-        
+
         background-color: var(--surface);
         z-index: 1000;
-        
+
         transition: left 0.3s ease-in-out;
     }
 
     .nav-links.active {
-        left: 0; /* Slide in */
+        left: 0;
+        /* Slide in */
     }
 
     .nav-links .nav-item {
-        font-size: var(--fs-lg); /* Make text bigger */
+        font-size: var(--fs-lg);
+        /* Make text bigger */
     }
 
     .nav__burger.open svg path:nth-child(1) {
         opacity: 0;
     }
+
     .nav__burger.open svg path:nth-child(2) {
         transform: rotate(-45deg) translate(-13px, 0px);
     }
+
     .nav__burger.open svg path:nth-child(3) {
         transform: rotate(45deg) translate(5px, -7px);
     }
@@ -690,6 +774,11 @@ padding: 0;
     .btn-consultar {
         opacity: 1;
         visibility: visible;
+    }
+
+    .opiniones-grid {
+        grid-template-columns: repeat(1, minmax(300px, 1fr));
+        grid-template-rows: repeat(4, 1fr);
     }
 }
 
