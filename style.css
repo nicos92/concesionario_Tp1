@@ -399,6 +399,7 @@ body {
     width: auto;
     margin-top: 1rem;
     align-self: center;
+    padding: auto;
     /* Centrar el botón */
 }
 
@@ -661,14 +662,16 @@ body {
     width: 80%;
     background: transparent;
     border: 2px solid var(--color-primary);
-    padding: 0;
+    padding: 0 2rem;
     text-align: center;
 }
 
 .card:hover .btn-consultar,
-.card-big:hover .btn-consultar {
+.card-big:hover .btn-consultar,
+.promocion-item:hover .btn-consultar {
     opacity: 1;
     visibility: visible;
+    padding: 0rem 2rem;
 }
 
 /*==================================================

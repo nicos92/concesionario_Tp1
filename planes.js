@@ -1,22 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
     const consultarButtons = document.querySelectorAll('.btn-consultar');
     const consultaTextarea = document.getElementById('form-consulta');
+    const txtnombre = document.getElementById('form-nombre');
 
     if (consultarButtons.length > 0 && consultaTextarea) {
         consultarButtons.forEach(button => {
-            button.addEventListener('click', (event) => {
-                const cardContent = event.target.closest('.card-content');
-                if (cardContent) {
-                    const titleElement = cardContent.querySelector('h3.card-title');
-                    const descriptionElement = cardContent.querySelector('.card-description, .card-slogan');
+            button.addEventListener('click', async (event) => {
+                const content = event.target.closest('.card-content, .promocion-content');
+                if (content) {
+                    const titleElement = content.querySelector('h3.card-title');
+                    const descriptionElements = content.querySelectorAll('.card-description, .card-slogan');
                     
-                    if (titleElement && descriptionElement) {
+                    if (titleElement && descriptionElements.length > 0) {
                         const titleText = titleElement.innerText.trim();
-                        const descriptionText = descriptionElement.innerText.trim();
                         
-                        let message = `Consulta sobre "${titleText}":\n\n${descriptionText}`;
+                        let descriptionText = '';
+                        descriptionElements.forEach(element => {
+                            descriptionText += element.innerText.trim() + '\n';
+                        });
+                        
+                        let message = `Consulta sobre "${titleText}":
+
+${descriptionText.trim()}`; 
                         
                         consultaTextarea.value = message;
+                        setTimeout(() => {
+                            txtnombre.focus();
+                        }, 100);
+                        
                     }
                 }
             });
