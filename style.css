@@ -420,8 +420,8 @@ body {
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    justify-content: center;
+    align-items: center;
     /* Por defecto horizontal para pantallas grandes */
 }
 
@@ -431,7 +431,7 @@ body {
     height: 250px;
     /* Ocupar todo el alto del contenedor */
     object-fit: cover;
-        border-radius: 50%;
+    border-radius: 50%;
 }
 
 .opinion-content {
@@ -462,6 +462,7 @@ body {
     gap: 5px;
     /* Espacio entre estrellas */
 }
+
 /*==================================================
     FOOTER & CONTACT FORM
 ==================================================*/
@@ -645,7 +646,7 @@ body {
 
 .borde-secundario {
     background: linear-gradient(60deg, transparent,
-        var(--color-primary),
+            var(--color-primary),
             transparent);
     padding: 1px;
     border-radius: .5rem;
@@ -795,5 +796,15 @@ body {
 
     .footer-container {
         width: 90%;
+    }
+
+    .card-section {
+        padding: 1rem 0;
+        /* Reducir padding horizontal */
+    }
+
+    .section {
+        padding: 1rem 0.5rem;
+        /* Ajustar padding general */
     }
 }
