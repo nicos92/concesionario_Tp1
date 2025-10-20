@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const opinionItems = document.querySelectorAll('.opinion-item');
 
     opinionItems.forEach((item) => {
-        let starCounter = 5; // Número de estrellas aleatorio entre 1 y 5
+        let starCounter = 5; 
 
         
 
