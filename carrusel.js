@@ -1,49 +1,49 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const carouselContainer = document.querySelector(".carrusel-contenedor");
-    const carouselItems = document.querySelectorAll(".carrusel-item");
+    const carruselContenedor = document.querySelector(".carrusel-contenedor");
+    const carruselItems = document.querySelectorAll(".carrusel-item");
     const btnatras = document.querySelector(".btn-atras");
     const btnsiguiente = document.querySelector(".btn-siguiente");
     let currentIndex = 0;
     let intervalId;
 
-    function updateCarousel() {
-        const itemWidth = carouselItems[0].offsetWidth;
-        carouselContainer.style.transform = `translateX(-${
+    function actualizarCarrusel() {
+        const itemWidth = carruselItems[0].offsetWidth;
+        carruselContenedor.style.transform = `translateX(-${
             currentIndex * itemWidth
         }px)`;
     }
 
-    function prevSlide() {
+    function antesDeCambiar() {
         currentIndex =
-            (currentIndex - 1 + carouselItems.length) % carouselItems.length;
-        updateCarousel();
+            (currentIndex - 1 + carruselItems.length) % carruselItems.length;
+        actualizarCarrusel();
     }
 
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % carouselItems.length;
-        updateCarousel();
+    function siguienteItem() {
+        currentIndex = (currentIndex + 1) % carruselItems.length;
+        actualizarCarrusel();
     }
 
-    function startCarousel() {
-        intervalId = setInterval(nextSlide, 3000);
+    function arrancarCarrusel() {
+        intervalId = setInterval(siguienteItem, 3000);
     }
 
-    function stopCarousel() {
+    function detenerCarrusel() {
         clearInterval(intervalId);
     }
 
     if (btnatras && btnsiguiente) {
         btnatras.addEventListener("click", () => {
-            stopCarousel();
-            prevSlide();
-            startCarousel();
+            detenerCarrusel();
+            antesDeCambiar();
+            arrancarCarrusel();
         });
 
         btnsiguiente.addEventListener("click", () => {
-            stopCarousel();
-            nextSlide();
-            startCarousel();
+            detenerCarrusel();
+            siguienteItem();
+            arrancarCarrusel();
         });
     }
-    startCarousel();
+    arrancarCarrusel();
 });

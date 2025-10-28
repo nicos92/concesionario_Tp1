@@ -295,11 +295,14 @@ body {
 }
 
 .card-content {
-    padding: 1rem 1rem 4rem;
+    padding: 1rem 1rem 1rem;
     border-radius: .5rem;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 
 }
+
 
 .card-image {
     width: 100%;
@@ -317,7 +320,7 @@ body {
 
 .card-title {
     font-weight: bold;
-    font-size: var(--fs-md);
+    font-size: var(--fs-base);
     margin-bottom: 0.5rem;
 }
 
@@ -661,16 +664,14 @@ body {
 .btn-consultar {
     opacity: 0;
     visibility: hidden;
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
     transition: opacity 0.3s ease, visibility 0.3s ease;
-    width: 80%;
     background: transparent;
     border: 2px solid var(--color-primary);
     padding: 0 2rem;
     text-align: center;
+    align-self: center;
+
+    
 }
 
 .card:hover .btn-consultar,
@@ -786,6 +787,8 @@ body {
         grid-template-rows: repeat(4, 1fr);
     }
 }
+
+
 
 /* X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {

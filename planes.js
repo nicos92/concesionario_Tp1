@@ -1,29 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const consultarButtons = document.querySelectorAll('.btn-consultar');
+    const consultarBonotes = document.querySelectorAll('.btn-consultar');
     const consultaTextarea = document.getElementById('form-consulta');
     const txtnombre = document.getElementById('form-nombre');
 
-    if (consultarButtons.length > 0 && consultaTextarea) {
-        consultarButtons.forEach(button => {
+    if (consultarBonotes.length > 0 && consultaTextarea) {
+        consultarBonotes.forEach(button => {
             button.addEventListener('click', async (event) => {
-                const content = event.target.closest('.card-content, .promocion-content');
-                if (content) {
-                    const titleElement = content.querySelector('h3.card-title');
-                    const descriptionElements = content.querySelectorAll('.card-description, .card-slogan');
-                    
-                    if (titleElement && descriptionElements.length > 0) {
-                        const titleText = titleElement.innerText.trim();
-                        
+                const contenido = event.target.closest('.card-content, .promocion-content');
+                if (contenido) {
+                    const titulo = contenido.querySelector('h3.card-title');
+                    const descripcion = contenido.querySelectorAll('.card-description, .card-slogan');
+
+                    if (titulo && descripcion.length > 0) {
+                        const textoTitulo = titulo.innerText.trim();
+
                         let descriptionText = '';
-                        descriptionElements.forEach(element => {
+                        descripcion.forEach(element => {
                             descriptionText += element.innerText.trim() + '\n';
                         });
-                        
-                        let message = `Consulta sobre "${titleText}":
 
-${descriptionText.trim()}`; 
-                        
-                        consultaTextarea.value = message;
+                        let msj = `Consulta sobre "${textoTitulo}": ${descriptionText.trim()}`;
+
+                        consultaTextarea.value = msj;
                         setTimeout(() => {
                             txtnombre.focus();
                         }, 100);

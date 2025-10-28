@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const sections = document.querySelectorAll(".section");
+    const secciones = document.querySelectorAll(".section");
     
     if (window.innerWidth <= 575) {
-        sections.forEach(section => {
+        secciones.forEach(section => {
             section.classList.add('visible');
         });
     }
     
     if (window.innerWidth > 575) {
-        const observer = new IntersectionObserver(
+        const observador = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
@@ -23,18 +23,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         );
 
-        sections.forEach((section) => {
-            observer.observe(section);
+        secciones.forEach((section) => {
+            observador.observe(section);
         });
     }
     
     window.addEventListener('resize', function() {
         if (window.innerWidth <= 575) {
-            sections.forEach(section => {
+            secciones.forEach(section => {
                 section.classList.add('visible');
             });
         } else {
-            sections.forEach(section => {
+            secciones.forEach(section => {
                 const rect = section.getBoundingClientRect();
                 if (rect.top < window.innerHeight && rect.bottom >= 0) {
                     section.classList.add('visible');
